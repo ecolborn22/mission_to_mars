@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Data on Demand</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape Mars Data</a></p>
+    </div>
+
+    <!-- Start row -->
+    <!-- Latest News -->
+    <div class="row" id="news_weather">
+      <div class="col-md-6">
+        <h2>Latest News</h2>
+        <h4>{{mars_dict.news_title}}</h4>
+        <p>{{mars_dict.paragraph}}</p>
+      </div>
+
+      <!-- Weather -->
+      <div class="col-md-6 border">
+        <h2>Mars Weather Update</h2>
+        <p>{{mars_dict.weather}}</p>
+      </div>
+    </div>
+    <!-- End row -->
+
+    <!-- Featured Image -->
+    <div class="row" id="feat-img">
+      <div class="col-md-12">
+        <h2>Featured Image</h2>
+        <a href={{mars_dict.image_url}}><img class="img-fluid rounded" src={{mars_dict.image_url}} alt="Mars Featured Image"></a>
+      </div>
+    </div>
+
+    <!-- Mars Facts Table -->
+    <div class="row" id="facts">
+        <div class="col-md-12">
+          <h2>Mars Fact Table</h2>
+          <html>{{mars_dict.facts}}</html>
+        </div>
+      </div>
+
+    <!-- Hemisphere -->
+    <div class="row" id="hemispheres">
+      <div class="col-md-12">
+        <h2>Mars Hemispheres</h2>
+      </div>  
+      <div class="col-md-6">
+        <h4 class="text-center">{{mars_dict.hemispheres[0].title}}</h4>
+        <a href={{mars_dict.hemispheres[0].img_url}}><img class="img-fluid img-thumbnail" src={{mars_dict.hemispheres[0].img_url}} alt={{mars_dict.hemispheres[0].title}}></a>
+        <h4 class="text-center">{{mars_dict.hemispheres[1].title}}</h4>
+        <a href={{mars_dict.hemispheres[1].img_url}}><img class="img-fluid img-thumbnail" src={{mars_dict.hemispheres[1].img_url}} alt={{mars_dict.hemispheres[1].title}}></a>
+      </div>
+      <div class="col-md-6">
+        <h4 class="text-center">{{mars_dict.hemispheres[2].title}}</h4>
+        <a href={{mars_dict.hemispheres[2].img_url}}><img class="img-fluid img-thumbnail" src={{mars_dict.hemispheres[2].img_url}} alt={{mars_dict.hemispheres[2].title}}></a>
+        <h4 class="text-center">{{mars_dict.hemispheres[3].title}}</h4>
+        <a href={{mars_dict.hemispheres[3].img_url}}><img class="img-fluid img-thumbnail" src={{mars_dict.hemispheres[3].img_url}} alt={{mars_dict.hemispheres[3].title}}></a>
+      </div>
+    </div>
+
+  </div>
+</body>
+
+</html>
